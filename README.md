@@ -2,7 +2,7 @@
 
 Aplicação web para organizar tarefas do dia a dia: cadastre, edite, conclua e exclua tarefas, filtre por status e mantenha tudo salvo no navegador.
 
-![Tela do Task Manager](docs/screenshot.png)
+![Tela do Task Manager](screenshot.png)
 
 ## Objetivo
 
@@ -34,7 +34,7 @@ Projeto desenvolvido durante o primeiro semestre de Engenharia de Software para 
 Não é necessário instalar nada.
 
 ```bash
-git clone https://github.com/SEU-USUARIO/task-manager.git
+git clone https://github.com/estermari2605-cloud/task-manager.git
 cd task-manager
 ```
 
@@ -72,5 +72,5 @@ task-manager/
 
 ## Autora
 
-**SEU NOME** — estudante de Engenharia de Software  
-[GitHub](https://github.com/SEU-USUARIO) · [LinkedIn](https://www.linkedin.com/in/SEU-PERFIL)
+**Ester Mari** — estudante de Engenharia de Software  
+[GitHub]https://github.com/estermari2605-cloud · [LinkedIn]https://www.linkedin.com/in/ester-mari
