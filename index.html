@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gerenciador de tarefas simples feito com HTML, CSS e JavaScript.">
+  <title>Task Manager</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Minhas tarefas</h1>
+      <p id="summary" class="summary" aria-live="polite"></p>
+    </header>
+
+    <div class="layout">
+      <!-- Formulário de cadastro e edição -->
+      <section class="panel" aria-labelledby="form-title">
+        <h2 id="form-title">Nova tarefa</h2>
+
+        <form id="task-form" novalidate>
+          <div class="field">
+            <label for="task-title">O que você precisa fazer?</label>
+            <input id="task-title" type="text" maxlength="120" autocomplete="off"
+                   placeholder="Ex.: Estudar lógica" required>
+            <p id="form-error" class="error" role="alert" hidden></p>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="task-priority">Prioridade</label>
+              <select id="task-priority">
+                <option value="low">Baixa</option>
+                <option value="medium" selected>Média</option>
+                <option value="high">Alta</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="task-due">Prazo (opcional)</label>
+              <input id="task-due" type="date">
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button id="submit-btn" type="submit" class="btn btn-primary">Adicionar tarefa</button>
+            <button id="cancel-btn" type="button" class="btn btn-ghost" hidden>Cancelar edição</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Lista de tarefas -->
+      <section class="tasks" aria-labelledby="list-title">
+        <h2 id="list-title" class="visually-hidden">Lista de tarefas</h2>
+
+        <div class="toolbar">
+          <div class="filters" role="group" aria-label="Filtrar tarefas">
+            <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">
+              Todas <span class="count" data-count="all">0</span>
+            </button>
+            <button type="button" class="filter" data-filter="pending" aria-pressed="false">
+              Pendentes <span class="count" data-count="pending">0</span>
+            </button>
+            <button type="button" class="filter" data-filter="done" aria-pressed="false">
+              Concluídas <span class="count" data-count="done">0</span>
+            </button>
+          </div>
+
+          <button id="clear-done-btn" type="button" class="btn btn-ghost btn-small">Limpar concluídas</button>
+        </div>
+
+        <ul id="task-list" class="task-list"></ul>
+        <p id="empty-state" class="empty" hidden></p>
+      </section>
+    </div>
+
+    <footer class="app-footer">
+      Os dados ficam salvos no seu navegador (localStorage).
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
